@@ -1,0 +1,224 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: 当前文件",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+	        "cwd": "${fileDirname}",
+            // "justMyCode": true,
+            
+            // "args": ["huge-gen",
+            //          //"--hidden_sizes",        "[64 [64]]",
+            //          "--lr",                  "0.0001",
+            //          "-t",                    "1500000",
+            //          "-e",                    "10000",
+            //          "--batch_size",          "256",
+            //          "--target_update_freq",  "1000",
+            //          "--replay_size",         "500000",
+            //          "--final_epsilon",       "0.1",
+            //          "--exploration_steps",   "900000",
+            //          "--gamma",               "0.9"             
+            // ]
+            // "args": ["medium-multi-site-honeypot",
+            //     //"--hidden_sizes",        "[64 [64]]",
+            //     "--lr",                  "0.0001",
+            //     "-t",                    "1500000",
+            //     "-e",                    "5000",
+            //     "--batch_size",          "64",
+            //     "--target_update_freq",  "1000",
+            //     "--replay_size",         "500000",
+            //     "--final_epsilon",       "0.1",
+            //     "--exploration_steps",   "3000",
+            //     "--gamma",               "0.9"             
+            // ]
+    //         "args": ["huge-gen8",
+    //             //"--hidden_sizes",        "[64 [64]]",
+    //             "--lr",                  "0.0001",
+    //             "-t",                    "1500000",
+    //             "-e",                    "1500",
+    //             "--batch_size",          "128",
+    //             "--target_update_freq",  "1000",
+    //             "--replay_size",         "500000",
+    //             "--final_epsilon",       "0.1",
+    //             "--exploration_steps",   "800",
+    //             "--gamma",               "0.9"             
+    //    ]
+    // "args": ["tiny",
+    //     //"--hidden_sizes",        "[64 [64]]",
+    //     "--lr",                  "0.0001",
+    //     "-t",                    "1500000",
+    //     "-e",                    "500",
+    //     "--batch_size",          "64",
+    //     "--target_update_freq",  "1000",
+    //     "--replay_size",         "1000",
+    //     "--final_epsilon",       "0.1",
+    //     "--exploration_steps",   "300",
+    //     "--gamma",               "0.9"             
+    // ]
+    // "args": ["small",
+    //     //"--hidden_sizes",        "[64 [64]]",
+    //     "--lr",                  "1e-4",
+    //     "-t",                    "1500000",
+    //     "-e",                    "500",
+    //     "--batch_size",          "64",
+    //     "--target_update_freq",  "1000",
+    //     "--replay_size",         "10000",
+    //     "--final_epsilon",       "0.1",
+    //     "--exploration_steps",   "100",
+    //     "--gamma",               "0.9"             
+    // ]
+    // "args": ["medium-honeypot",
+    //     //"--hidden_sizes",        "[64 [64]]",
+    //     "--lr",                  "0.0001",
+    //     "-t",                    "1500000",
+    //     "-e",                    "1500",
+    //     "--batch_size",          "64",
+    //     "--target_update_freq",  "1000",
+    //     "--replay_size",         "500000",
+    //     "--final_epsilon",       "0.1",
+    //     "--exploration_steps",   "800",
+    //     "--gamma",               "0.9"             
+    // ]
+    // "args": ["medium-honeypot",
+    //     //"--hidden_sizes",        "[64 [64]]",
+    //     "--lr",                  "0.0001",
+    //     "-t",                    "1200000",
+    //     "-e",                    "1500",
+    //     "--batch_size",          "64",
+    //     "--target_update_freq",  "1000",
+    //     "--replay_size",         "500000",
+    //     "--final_epsilon",       "0.1",
+    //     "--exploration_steps",   "600000",
+    //     "--gamma",               "0.9"             
+    // ]
+    "args": ["small",
+        //"--hidden_sizes",        "[64 [64]]",
+        "--lr",                  "0.0001",
+        "-t",                    "1500000",
+        "-e",                    "500",
+        "--batch_size",          "64",
+        "--target_update_freq",  "1000",
+        "--replay_size",         "10000",
+        "--final_epsilon",       "0.1",
+        "--exploration_steps",   "100",
+        "--gamma",               "0.9"             
+    ]
+    // "args": ["medium-multi-site-honeypot",
+    //     //"--hidden_sizes",        "[64 [64]]",
+    //     "--lr",                  "0.0001",
+    //     "-t",                    "1500000",
+    //     "-e",                    "1500",
+    //     "--batch_size",          "64",
+    //     "--target_update_freq",  "1000",
+    //     "--replay_size",         "300000",
+    //     "--final_epsilon",       "0.1",
+    //     "--exploration_steps",   "400",
+    //     "--gamma",               "0.9"             
+    // ]
+    // "args": ["huge-gen8",
+    //     //"--hidden_sizes",        "[64 [64]]",
+    //     "--lr",                  "0.0001",
+    //     "-t",                    "1500000",
+    //     "-e",                    "1500",
+    //     "--batch_size",          "512",
+    //     "--target_update_freq",  "1000",
+    //     "--replay_size",         "300000",
+    //     "--final_epsilon",       "0.1",
+    //     "--exploration_steps",   "500",
+    //     "--gamma",               "0.9"             
+    // ]
+    // "args": ["medium-multi-site-1VUL",
+    //     //"--hidden_sizes",        "[64 [64]]",
+    //     "--lr",                  "0.0001",
+    //     "-t",                    "400000",
+    //     "-e",                    "1500",
+    //     "--batch_size",          "128",
+    //     "--target_update_freq",  "1000",
+    //     "--replay_size",         "300000",
+    //     "--final_epsilon",       "0.1",
+    //     "--exploration_steps",   "300",
+    //     "--gamma",               "0.9"             
+    // ]
+    // "args": ["medium-multi-site-honeypot-3",
+    //     //"--hidden_sizes",        "[64 [64]]",
+    //     "--lr",                  "0.0001",
+    //     "-t",                    "400000",
+    //     "-e",                    "1000",
+    //     "--batch_size",          "128",
+    //     "--target_update_freq",  "1000",
+    //     "--replay_size",         "300000",
+    //     "--final_epsilon",       "0.1",
+    //     "--exploration_steps",   "500",
+    //     "--gamma",               "0.9"             
+    // ]
+    // "args": ["medium-multi-site",
+    // //"--hidden_sizes",        "[64 [64]]",
+    // "--lr",                  "0.0001",
+    // "-t",                    "400000",
+    // "-e",                    "500",
+    // "--batch_size",          "128",
+    // "--target_update_freq",  "1500",
+    // "--replay_size",         "200000",
+    // "--final_epsilon",       "0.1",
+    // "--exploration_steps",   "300",
+    // "--gamma",               "0.9"             
+    // ]
+//     "args": ["huge-gen10",
+//     //"--hidden_sizes",        "[64 [64]]",
+//     "--lr",                  "0.0001",
+//     "-t",                    "1500000",
+//     "-e",                    "1500",
+//     "--batch_size",          "128",
+//     "--target_update_freq",  "1000",
+//     "--replay_size",         "500000",
+//     "--final_epsilon",       "0.1",
+//     "--exploration_steps",   "700",
+//     "--gamma",               "0.9"             
+// ]
+            // "args": ["huge-gen6",
+            //          //"--hidden_sizes",        "[64 [64]]",
+            //          "--lr",                  "0.0001",
+            //          "-t",                    "1500000",
+            //          "-e",                    "1500",
+            //          "--batch_size",          "128",
+            //          "--target_update_freq",  "1000",
+            //          "--replay_size",         "500000",
+            //          "--final_epsilon",       "0.1",
+            //          "--exploration_steps",   "1000",
+            //          "--gamma",               "0.9"             
+            // ]
+            // "args": ["huge-gen5",
+            //     //"--hidden_sizes",        "[64 [64]]",
+            //     "--lr",                  "0.0001",
+            //     "-t",                    "1500000",
+            //     "-e",                    "1500",
+            //     "--batch_size",          "128",
+            //     "--target_update_freq",  "1000",
+            //     "--replay_size",         "500000",
+            //     "--final_epsilon",       "0.1",
+            //     "--exploration_steps",   "500",
+            //     "--gamma",               "0.9"             
+            // ]
+            // "args": ["small",
+            //     //"--hidden_sizes",        "[64 [64]]",
+            //     "--lr",                  "0.0001",
+            //     "-t",                    "1500000",
+            //     "-e",                    "500",
+            //     "--batch_size",          "64",
+            //     "--target_update_freq",  "1000",
+            //     "--replay_size",         "10000",
+            //     "--final_epsilon",       "0.1",
+            //     "--exploration_steps",   "100",
+            //     "--gamma",               "0.9"             
+            // ]
+            
+        }
+    ]
+}

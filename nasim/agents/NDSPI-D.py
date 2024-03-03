@@ -24,7 +24,14 @@ to be an example implementation that can be used as a reference for building
 your own agents.
 """
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+import os, sys
+from pathlib import Path
+curr_path = os.path.dirname(__file__)
+parent_path = os.path.dirname(curr_path)
+pparent_path = os.path.dirname(parent_path)
+sys.path.append(parent_path)  # add current terminal path to sys.path
+sys.path.append(pparent_path)  # add current terminal path to sys.path
+sys.path.append(curr_path)  # add current terminal path to sys.path
 import random
 import numpy as np
 import math
@@ -408,7 +415,7 @@ class DQN_PERAgent:
 
         self.num_actions = self.env.action_space.n
         self.obs_dim = self.env.observation_space.shape
-        self.hosts=self.env.network.hosts_addresses
+        self.hosts=self.env.network.hosts
         self.host_num=len(self.hosts)
         self.action_num=int(self.num_actions/self.host_num)
         self.alpha_host=0.5/self.host_num
@@ -442,7 +449,6 @@ class DQN_PERAgent:
         if self.verbose:
             print(f"\nUsing Neural Network running on device={self.device}:")
             print(self.device)
-            print(torch.cuda.get_device_name(0))
             print(self.dqn)
         self.num_episodes = 0
         self.target_dqn = DQN_dueling_noisy(self.obs_dim,
@@ -550,7 +556,7 @@ class DQN_PERAgent:
             self.replayPER.update(idx, error[i])
     
         # calculate loss    
-        loss = (torch.cuda.FloatTensor(is_weight) * F.mse_loss(q_vals, target,reduce=False,reduction='none')).mean()
+        loss = (torch.FloatTensor(is_weight) * F.mse_loss(q_vals, target,reduce=False,reduction='none')).mean()
         #loss = (torch.cuda.FloatTensor(is_weight) * self.loss_fn(q_vals, target)).mean()
         # optimize the model
         self.optimizer.zero_grad()
@@ -597,12 +603,7 @@ class DQN_PERAgent:
                 self.logger.add_scalar(
                     "episode-steps-episode", ep_steps, self.num_episodes
                 )
-                self.logger.add_scalar(
-                    "honeypot_reached", int(self.env.honeypot_reached()), self.steps_done
-                )
-                self.logger.add_scalar(
-                    "honeypot_reached-episodes", int(self.env.honeypot_reached()), self.num_episodes
-                )
+                
                 self.num_episodes += 1
             else:
                 print(f"\treplay memory: = {self.replayPER.tree.n_entries} / "

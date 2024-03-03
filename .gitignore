@@ -1,0 +1,7 @@
+nasim/scenarios/__pycache__
+nasim/scenarios/benchmark/__pycache__
+nasim/envs/__pycache__
+nasim/agents/__pycache__
+.vscode/settings.json
+nasim/__pycache__
+nasim/agents/runs
